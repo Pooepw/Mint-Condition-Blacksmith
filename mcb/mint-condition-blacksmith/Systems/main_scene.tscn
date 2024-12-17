@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct4c60gwcuojw"]
+
+[ext_resource type="PackedScene" uid="uid://h6g8vwg5ih66" path="res://CardConstruction/importing_ui.tscn" id="1_v28ei"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="ImportingUI" parent="." instance=ExtResource("1_v28ei")]
+offset_top = 5.0
+offset_bottom = 5.0

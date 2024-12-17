@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://h6g8vwg5ih66"]
+
+[ext_resource type="Script" path="res://CardConstruction/importing_ui.gd" id="1_r6ut4"]
+[ext_resource type="FontFile" uid="uid://ckl3aelyr5mcf" path="res://CardConstruction/CardTemplates/CardFont.ttf" id="2_lai4g"]
+
+[sub_resource type="Theme" id="Theme_vjvdi"]
+
+[sub_resource type="Theme" id="Theme_wjged"]
+default_font = ExtResource("2_lai4g")
+default_font_size = 40
+
+[node name="ImportingUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r6ut4")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "File Opening Test"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(613, 490)
+visible = true
+theme = SubResource("Theme_vjvdi")
+ok_button_text = "Open"
+file_mode = 0
+root_subfolder = "res://CardConstruction/Imports/"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 249.0
+offset_right = 1681.0
+offset_bottom = 469.0
+theme = SubResource("Theme_wjged")
+text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
